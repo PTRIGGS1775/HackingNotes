@@ -15,3 +15,26 @@ Here's what I'm using to learn.
 Vim: https://thevaluable.dev/vim-commands-beginner/  
 Markdown: https://www.markdownguide.org/cheat-sheet/  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+complete
+
