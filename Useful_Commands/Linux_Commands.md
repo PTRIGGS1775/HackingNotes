@@ -1,8 +1,35 @@
 # Orientation
 Linux commands are helpful on a pentest as they'll be a natural part of most environments you're on. I've left some basic ones out and only put in the ones I need to remember from time to time.  
 
+# Housekeeping
+Update kali linux
+`sudo apt update && apt upgrade`  
+When installing new tools recommend installing them into the opt directory  
+`cd /opt`  
+
 # Network Commands
-List all networks
-`ip a`
+List all networks  
+`ip a`  
+List wireless commands  
+`iwconfig`  
+List networked neighbors in the mac table  
+`ip n`
+List routing information  
+`ip r`  
+List open ports  
+`netstat -tulpn`  
+
+# Services
+Start or stop any service  
+`sudo service [service] start/stop`  
+Start or stop any service at bootup  
+`sudo systemctl enable/disable [service]`
+Start a web service for reasons...  
+`sudo service apache2 start`  
+Start a web service without apache   
+`python3 -m http.server [port]`  
+
+
+
 
 
