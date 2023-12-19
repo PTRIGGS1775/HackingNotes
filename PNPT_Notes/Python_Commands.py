@@ -110,6 +110,73 @@ test_or2 = True or False #True
 
 test_not = not True #False:
 
+#Conditional Statements
+nl()
+print('##Conditional Statements Section') 
+
+def drink(money):
+	if money >= 2:
+		return "You've got yourself a drink!"
+	else:
+		return "No drink for you!"
+
+print(drink(3))
+print(drink(1))
+
+
+def alcohol(age,money):
+	if(age >= 21) and (money >= 5):
+		return "We're getting a drink!"
+	elif (age >= 21) and (money < 5):
+		return "Come back with more money."
+	elif (age < 21) and (money >= 5):
+		return "Nice try, kid!"
+	else:
+		return "You're too poor and too young!"
+		
+print(alcohol(21,5))
+print(alcohol(21,4))
+print(alcohol(20,5))
+print(alcohol(20,4))
+
+#Lists
+nl()
+print('##Lists Section')
+
+movies = ['John Wick','LOTR','Revolver','Horrible Bosses']
+print(movies[1]) #Returns the second item in the list because the index starts at 0
+print(movies[0:2]) #Not inclusive and will only print 2 items.
+print(movies[1:]) #Prints everything from the second value on.
+print(movies[:2]) #Prints the values from before the 3rd value not including the 3rd value.
+print(movies[-1]) #Prints the last item.
+
+print('length')
+print(len(movies))
+nl()
+print('append method:')
+movies.append('Constantine')
+print(movies)
+nl()
+print('insert method:')
+movies.insert(2,'Tenacious D')
+print(movies)
+nl()
+print('pop method:')
+movies.pop() #Removes the last item, constantine. Putting an index value in here will modify which item gets removed.
+print(movies)
+
+print('combine lists:')
+wife_movies = ['The holiday','Paddington']
+our_movies = movies + wife_movies
+print(our_movies)
+
+grades = [['Bob', 83], ['Alice', 90], ['Jeff', 99]]
+bobs_grade = grades[0][1] #Pulls the second item from the first index.
+print(bobs_grade)
+grades[0][1] = 91
+print(grades)
+
+
 
 
 
