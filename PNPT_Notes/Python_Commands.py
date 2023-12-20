@@ -176,9 +176,30 @@ print(bobs_grade)
 grades[0][1] = 91
 print(grades)
 
+#Tuples - Do not change, ()
+grades = ("a", "b", "c", "d", "f")
 
+#grades.pop #grades.append won't work - not mutable
 
+print(grades[1])
 
+#Looping
+nl()
+print('##Looping Section')
+#For loops execute until complete.
+vegetable = ['kale','broccoli','carrots']
+for veggies in vegetable:
+    print(veggies)
+
+#ip = range(254)
+#for x in ip:
+#    ping 192.168.1.x
+
+#While executes as long as true
+i = 1
+while i < 10:
+    print(i)
+    i += 1
 
 
 
