@@ -201,6 +201,56 @@ while i < 10:
     print(i)
     i += 1
 
+#Advanced strings
+nl()
+print('##AdvStrings Section')
+my_name = 'Paul'
+print(my_name[0]) #First letter
+print(my_name[-1]) #Last letter
+#String are like tuples, immutable.
+
+sentence = "This is a sentence."
+print(sentence[:4])
+print(sentence.split()) #delimeter with default of a space. Punctuation is tied to words not a separate list value.
+
+quote = 'Kaladin Stormblessed Reborn said "Tell him what I\'ve done here. I want to see his face"'
+print(quote)
+#For this lesson look at all the available methods you have .split, .join, .strip, .lower, .upper, .replace
+
+print("A" in "Apple") #returns true
+print("a" in "Apple") #returns false - case sensitive
+
+letter = "A"
+word = "Apple"
+print(letter.lower() in word.lower()) #improved
+
+#String formatting
+movie = "The Mummy"
+print("My favorite movie is {}.".format(movie)) #string format method
+print("My favorite movie is %s." % movie) #percent formating
+print(f"My favorite movie is {movie}.") #string literal
+
+#DICTIONARIES - key/value pairs {}
+nl()
+print('##Dictionaries Section')
+drinks = {"White Russian": 7, "Old Fashion": 10, "Lemon Drop": 8} #drink is key, price is value
+print(drinks)
+
+employees = {"Finance": ["Bob", "Linda", "Tina"], "IT": ["Gene", "Louise", "Teddy"], "HR": ["Jimmy Jr.", "Mort"]}
+print('Before adding key pair:')
+print(employees)
+employees['Legal'] = ["Mr. Frond"] #adds new key:value pair
+print('After adding key pair:')
+print(employees)
+
+employees.update({"Sales": ["Andie", "Ollie"]}) #adds new key:value pair
+print(employees)
+
+drinks['White Russian'] = 8
+print(drinks)
+
+print(drinks.get("White Russian"))
+
 
 
 
