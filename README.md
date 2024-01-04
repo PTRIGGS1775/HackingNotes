@@ -14,7 +14,7 @@ Here's what I'm using to learn.
 
 Vim: https://thevaluable.dev/vim-commands-beginner/  
 Markdown: https://www.markdownguide.org/cheat-sheet/  
-
+          https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet
 
 
 
