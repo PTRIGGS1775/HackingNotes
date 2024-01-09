@@ -18,4 +18,8 @@ The following options below are just options, you should be thinking about the m
 [MaverickAdams Github](https://github.com/hmaverickadams) Download his tool called breach-parse.\
 [Dehashed](https://dehashed.com/login) Let's you search on various fields to see where else that information is used.\
 
-
+### Finding subdomains passively
+Separate from enumerating with something like gobuster there are sites and tools that you can find subdomains with minimal lag time. Note these tools are probably not as effective for HackTheBox or ProvingGrounds.\
+[CertificateSearch](https://crt.sh) provides a series of different levels based on certificate fingerprinting all from a web portal.\
+sublist3r searches various databases for subdomains from the CLI\
+`sublist3r -d [domain.com]`
