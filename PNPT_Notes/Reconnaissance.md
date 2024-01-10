@@ -16,10 +16,11 @@ Just a <sup>quick</sup> *test* of **Markdown**
 You can use gathered credentials to create a word list to streamline password cracking. Additionally, you should be looking for patterns. You may be able to target individuals of a company and potentially reuse passwords from personal accounts on target system.\
 The following options below are just options, you should be thinking about the methodology.\
 [MaverickAdams Github](https://github.com/hmaverickadams) Download his tool called breach-parse.\
-[Dehashed](https://dehashed.com/login) Let's you search on various fields to see where else that information is used.\
+[Dehashed](https://dehashed.com/login) Let's you search on various fields to see where else that information is used.
 
 ### Finding subdomains passively
-Separate from enumerating with something like gobuster there are sites and tools that you can find subdomains with minimal lag time. Note these tools are probably not as effective for HackTheBox or ProvingGrounds.\
+Separate from enumerating with something like gobuster there are sites and tools that you can find subdomains with minimal lag time. Note these tools are probably not as effective for HackTheBox or ProvingGrounds. However, these are likely good for bug bounties.\
 [CertificateSearch](https://crt.sh) provides a series of different levels based on certificate fingerprinting all from a web portal.\
 sublist3r searches various databases for subdomains from the CLI\
-`sublist3r -d [domain.com]`
+`sublist3r -d [domain.com] -t 100`\
+Install [**OWASP AMASS**](https://github.com/OWASP/Amass)
