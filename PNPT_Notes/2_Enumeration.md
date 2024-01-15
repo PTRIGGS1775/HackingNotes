@@ -72,7 +72,7 @@ Pass-the-Hash\
 
 ### CrackMapExec 
 Null User\
-> crackmapexec smb *IP* -u ' ' -p ' ' --shares
+`crackmapexec smb _IP_ -u ' ' -p ' ' --shares`
 Credentials\
 `crackmapexec smb *IP* -u '*username*' -p '*password*' --shares`
 Pass-the-Hash\
