@@ -26,4 +26,21 @@ Ping scan a range of IPs:\
 # Individual Service Enumeration
 ## HTTP/S (80, 8080, 443)
 First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):\
-`sudo /home/kali/HackingNotes/tools/httpenum.sh <IP>`
+- I set this as an alias so all I need to do is type `httpenum` into my CLI and it will run.
+
+This script runs the NMAP scripting engine for HTTP, Nikto, and goBuster. You can do these things individually with:
+- Nmap:
+`sudo nmap -p 80 --script=http-enum.nse <IP>`
+- goBuster (see below)
+- Nikto:
+`nikto -host <IP>
+
+### goBuster Scans
+Also be aware that you can use different wordlists as well as look up different hosts with the VHOSTs option in gobuster, this allows you to find things suchs as secrets.htb.local from just having htb.local also known as subdomains.
+- Basic 
+`sudo gobuster dir -u http://IP  -t 50 -w /usr/share/dirb/wordlists/common.txt  -o busted.txt -x php,sh,txt,py`
+- Intense 
+`sudo gobuster dir -u http://IP  -t 50 -w /usr/share/dirb/wordlists/big.txt  -o intensebusted.txt -x php,sh,txt,py`
+- Seclists 
+`sudo gobuster dir -u http://IP  -t 50 -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -s '200,204,301,302,307,403,500' -e`
+
