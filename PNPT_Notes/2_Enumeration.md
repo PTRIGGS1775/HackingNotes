@@ -3,16 +3,19 @@
 ## NMAP Scans 
 **Host Discovery**\
 `nmap -sn 10.10.10.0/24`\
-`sudo arp-scan -l`
+`sudo arp-scan -l`\
+
 **Initial Scans**\
 `sudo nmap -sC -sV -oA {directory}/{directory}  10.10.10.242`\
+
 **Fast Scans**\
-`nmap -Pn -sV 10.10.28.104 -p- > scan1.txt`\
+`nmap -Pn -sV 10.10.28.104 -p- > scan1.txt`
 
 ## One Liner scan scripts 
 ### Linux 
 Scan 1 system for a range of ports using Netcat:\
 `for i in {20..65535}; do nc -nzvw1 192.168.65.20 $i 2>&1 & done | grep -E 'succ|open$'`\
+
 Scan 1 system for a range of ports using /DEV/TCP:\
 `for p in {1..1023}; do(echo >/dev/tcp/10.0.0.104/$p) >/dev/null 2>&1 && echo "$p open"; done`\
 Scan a range of IPs for specific ports using Netcat:\
@@ -58,22 +61,25 @@ Also be aware that you can use different wordlists as well as look up different 
 
 ### SMBClient 
 Logging in without info\
-`smbclient --no-pass -L //*IP*'
+`smbclient --no-pass -L //<IP>`\
+
 If you omit the pwd, it will be prompted. With --pw-nt-hash, the pwd provided is the NT hash.\
-`smbclient -U '*username*[%passwd]' -L [--pw-nt-hash] //*IP*`
+`smbclient -U '<username>[%passwd]' -L [--pw-nt-hash] //<IP>`\
 
 ### SMBMap 
 Null User\
-`smbmap -H IP -P PORT`
+`smbmap -H <IP> -P <PORT>`\
 Credentials\
-`smbmap -u "*username*" -p "*password*" -H *IP* -P *PORT*`
+`smbmap -u "<username>" -p "<password>" -H <IP> -P <PORT>`\
 Pass-the-Hash\
-`smbmap -u "*username*" -p "NT:LM" -H *IP* -P *PORT*`
+`smbmap -u "<username>" -p "NT:LM" -H <IP> -P <PORT>`\
 
 ### CrackMapExec 
 Null User\
-`crackmapexec smb _IP_ -u ' ' -p ' ' --shares`
+`crackmapexec smb <IP> -u ' ' -p ' ' --shares`\
+
 Credentials\
-`crackmapexec smb *IP* -u '*username*' -p '*password*' --shares`
+`crackmapexec smb <IP> -u '<username>' -p '<password>' --shares`\
+
 Pass-the-Hash\
-`crackmapexec smb *IP* -u '*username*' -H '*HASH*' --shares`
+`crackmapexec smb <IP> -u '<username>' -H '<HASH>' --shares`\
