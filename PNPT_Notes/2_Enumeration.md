@@ -3,8 +3,9 @@
 ## NMAP Scans 
 **Host Discovery**\
 `nmap -sn 10.10.10.0/24`\
+`sudo arp-scan -l`
 **Initial Scans**\
-`sudo nmap -sSVC -Pn -T4 -A  10.10.10.242 -p- > scan1.txt`\
+`sudo nmap -sC -sV -oA {directory}/{directory}  10.10.10.242`\
 **Fast Scans**\
 `nmap -Pn -sV 10.10.28.104 -p- > scan1.txt`\
 
@@ -22,3 +23,6 @@ Ping scan a range of IPs:\
 ### Windows 
 `for /l %i in (1,1,254) do @ping -n 1 -w 100 172.16.249.%i | findstr "Reply"`\
 
+# Individual Service Enumeration
+## HTTP/S (80, 8080, 443)
+Don't forget to add your HTTP Enum Script to your github

@@ -1,0 +1,58 @@
+====================NMAP====================
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-14 20:12 EST
+Nmap scan report for 192.168.110.130
+Host is up (0.00040s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+| http-enum: 
+|   /test.php: Test page
+|   /icons/: Potentially interesting directory w/ listing on 'apache/1.3.20'
+|   /manual/: Potentially interesting directory w/ listing on 'apache/1.3.20'
+|_  /usage/: Potentially interesting folder
+MAC Address: 00:0C:29:A0:F9:2F (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 6.11 seconds
+==================GOBUSTER==================
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://192.168.110.130/
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              py,php,sh,txt
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+[2K/.hta                 (Status: 403) [Size: 268]
+[2K/.hta.php             (Status: 403) [Size: 272]
+[2K/.hta.sh              (Status: 403) [Size: 271]
+[2K/.hta.py              (Status: 403) [Size: 271]
+[2K/.hta.txt             (Status: 403) [Size: 272]
+[2K/.htaccess.php        (Status: 403) [Size: 277]
+[2K/.htaccess.sh         (Status: 403) [Size: 276]
+[2K/.htaccess            (Status: 403) [Size: 273]
+[2K/.htpasswd            (Status: 403) [Size: 273]
+[2K/.htpasswd.php        (Status: 403) [Size: 277]
+[2K/.htaccess.py         (Status: 403) [Size: 276]
+[2K/.htaccess.txt        (Status: 403) [Size: 277]
+[2K/.htpasswd.sh         (Status: 403) [Size: 276]
+[2K/.htpasswd.txt        (Status: 403) [Size: 277]
+[2K/.htpasswd.py         (Status: 403) [Size: 276]
+[2K/~root                (Status: 403) [Size: 269]
+[2K/~operator            (Status: 403) [Size: 273]
+[2K/cgi-bin/             (Status: 403) [Size: 272]
+[2K/index.html           (Status: 200) [Size: 2890]
+[2K/manual               (Status: 301) [Size: 294] [--> http://127.0.0.1/manual/]
+[2K/mrtg                 (Status: 301) [Size: 292] [--> http://127.0.0.1/mrtg/]
+[2K/test.php             (Status: 200) [Size: 27]
+[2K/usage                (Status: 301) [Size: 293] [--> http://127.0.0.1/usage/]
+
+===============================================================
+Finished
+===============================================================

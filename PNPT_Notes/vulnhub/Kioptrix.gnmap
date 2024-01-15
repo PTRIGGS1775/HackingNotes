@@ -1,0 +1,4 @@
+# Nmap 7.94SVN scan initiated Sun Jan 14 19:54:08 2024 as: nmap -sC -sV -oA Kioptrix 192.168.110.130
+Host: 192.168.110.130 ()	Status: Up
+Host: 192.168.110.130 ()	Ports: 22/open/tcp//ssh//OpenSSH 2.9p2 (protocol 1.99)/, 80/open/tcp//http//Apache httpd 1.3.20 ((Unix)  (Red-Hat|Linux) mod_ssl|2.8.4 OpenSSL|0.9.6b)/, 111/open/tcp//rpcbind//2 (RPC #100000)/, 139/open/tcp//netbios-ssn//Samba smbd (workgroup: MYGROUP)/, 443/open/tcp//ssl|https//Apache|1.3.20 (Unix)  (Red-Hat|Linux) mod_ssl|2.8.4 OpenSSL|0.9.6b/, 32768/open/tcp//status//1 (RPC #100024)/	Ignored State: closed (994)
+# Nmap done at Sun Jan 14 19:54:25 2024 -- 1 IP address (1 host up) scanned in 17.10 seconds

@@ -9,32 +9,13 @@ Hacking notes is a page that I've built to start my convergence of learning with
 * Learn Docker
 * Complete OSCP
 
-## Usefulel Links
+## Useful Links
 Here's what I'm using to learn.
 
-Vim: https://thevaluable.dev/vim-commands-beginner/  
-Markdown: https://www.markdownguide.org/cheat-sheet/  
-          https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Vim: 
+- https://thevaluable.dev/vim-commands-beginner/  
+- Don't forget to set your vimrc file again. https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
+Markdown: 
+- https://www.markdownguide.org/cheat-sheet/  
+-  https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet
 
