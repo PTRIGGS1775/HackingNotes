@@ -26,7 +26,7 @@ Ping scan a range of IPs:\
 # Individual Service Enumeration
 ## HTTP/S (80, 8080, 443)
 ### Method
-> First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):\
+> First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):
 > - I set this as an alias so all I need to do is type `httpenum` into my CLI and it will run.
 > 
 > This script runs the NMAP scripting engine for HTTP, Nikto, and goBuster. You can do these things individually with:
@@ -34,7 +34,7 @@ Ping scan a range of IPs:\
 > `sudo nmap -p 80 --script=http-enum.nse <IP>`
 > - goBuster (see below)
 > - Nikto:
-> `nikto -host <IP>
+> `nikto -host <IP>`
 >
 > Second thing is to review the webpage itself. Method:
 > 1. Review page and subdomains
@@ -50,3 +50,30 @@ Also be aware that you can use different wordlists as well as look up different 
 - Seclists 
 `sudo gobuster dir -u http://IP  -t 50 -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -s '200,204,301,302,307,403,500' -e`
 
+## SMB (139, 445)
+### Method
+> TCM recommends searching metasploit to review smb scanning information
+> My method would be to run some automatic commands first and then do the process of manual entry. 
+> Automatic commands are enum4linux and nmap. I've put these into a script like my httpenum script for convenience: [smbenum](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/smbenum.sh) and created the alias smbenum.
+
+### SMBClient 
+Logging in without info\
+`smbclient --no-pass -L //*IP*'
+If you omit the pwd, it will be prompted. With --pw-nt-hash, the pwd provided is the NT hash.\
+`smbclient -U '*username*[%passwd]' -L [--pw-nt-hash] //*IP*`
+
+### SMBMap 
+Null User\
+`smbmap -H IP -P PORT`
+Credentials\
+`smbmap -u "*username*" -p "*password*" -H *IP* -P *PORT*`
+Pass-the-Hash\
+`smbmap -u "*username*" -p "NT:LM" -H *IP* -P *PORT*`
+
+### CrackMapExec 
+Null User \
+`crackmapexec smb *IP* -u ' ' -p ' ' --shares`
+Credentials\
+`crackmapexec smb *IP* -u '*username*' -p '*password*' --shares`
+Pass-the-Hash\
+`crackmapexec smb *IP* -u '*username*' -H '*HASH*' --shares`
