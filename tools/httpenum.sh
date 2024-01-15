@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Simple script to run your http enumeration step.
-#Automatically outputs to httpenum_<IP>.txt
+#Automatically outputs to httpenum_<IP>_<PORT>.txt
 
 #Defines ip variable as the first argument
 ip="$1"
