@@ -25,4 +25,5 @@ Ping scan a range of IPs:\
 
 # Individual Service Enumeration
 ## HTTP/S (80, 8080, 443)
-Don't forget to add your HTTP Enum Script to your github
+First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):\
+`sudo /home/kali/HackingNotes/tools/httpenum.sh <IP>`
