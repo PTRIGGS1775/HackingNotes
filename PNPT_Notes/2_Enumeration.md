@@ -71,8 +71,8 @@ Pass-the-Hash\
 `smbmap -u "*username*" -p "NT:LM" -H *IP* -P *PORT*`
 
 ### CrackMapExec 
-Null User \
-`crackmapexec smb *IP* -u ' ' -p ' ' --shares`
+Null User\
+> crackmapexec smb *IP* -u ' ' -p ' ' --shares
 Credentials\
 `crackmapexec smb *IP* -u '*username*' -p '*password*' --shares`
 Pass-the-Hash\
