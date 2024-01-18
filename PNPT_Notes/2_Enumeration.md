@@ -9,7 +9,9 @@
 `sudo nmap -sC -sV -oA {directory}/{directory}  10.10.10.242`
 
 **Fast Scans**\
-`nmap -Pn -sV 10.10.28.104 -p- > scan1.txt`
+```bash
+nmap -Pn -sV 10.10.28.104 -p- > scan1.txt
+```
 
 ## One Liner scan scripts 
 ### Linux 
