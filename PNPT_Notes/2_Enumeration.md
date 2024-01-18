@@ -29,6 +29,7 @@ Ping scan a range of IPs:\
 `for /l %i in (1,1,254) do @ping -n 1 -w 100 172.16.249.%i | findstr "Reply"`
 
 # Individual Service Enumeration
+Recommend [hackTricks](https://book.hacktricks.xyz/welcome/getting-started-in-hacking) for any services not listed here.
 ## HTTP/S (80, 8080, 443)
 ### Method
 > First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):
