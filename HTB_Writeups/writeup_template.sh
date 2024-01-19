@@ -59,25 +59,38 @@ echo "\`\`\`" >> $boxname/Readme.md
 printf "\n\n\n"
 printf "============================================================================================================="
 printf "\n\n"
-printf "[*] The script has completed. You know have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n"
-read -p "Would you like to run your nmap script? (sudo nmap -sC -sV $ip > $boxname/nmap_$ip)? " -n 1 -r
+printf "[*] The script has completed. You now have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n"
+read -p "Would you like to run your nmap script [y/n]? (sudo nmap -sC -sV $ip > $boxname/nmap_$ip) " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+	printf "This may take up to 10 minutes."
 	#Start the visual wait command.
 	while true;do echo -n .;sleep 1;done &
 	sudo nmap -sC -sV $ip > $boxname/nmap_$ip
 	#Complete the visual wait command and echo step.
 	kill $!; trap 'kill $!' SIGTERM
+	
+	#This will only work without a prompt within my current environment.
+	#This will create issues if I do a git pull, I'll need to reset my git variables.
+	git add . 
+	git commit -m "Created directory for HTB $boxname and completed the nmap scan"
+	git push
+
+	printf "\n\n\n"
+	printf "============================================================================================================="
+	printf "\n\n"
+	printf "Your NMAP scan is complete and all files have been added to your github. Happy hunting."
+
+else
+	git add . 
+	git commit -m "Created directory for HTB $boxname"
+	git push
+	
+	printf "\n\n\n"
+	printf "============================================================================================================="
+	printf "\n\n"
+	printf "Happy hunting on your own, all files have been added to your github"
+
 fi
 
-#This will only work without a prompt within my current environment.
-#This will create issues if I do a git pull, I'll need to reset my git variables.
-git add . 
-git commit -m "Created directory for HTB $boxname"
-git push
-
-printf "\n\n\n"
-printf "============================================================================================================="
-printf "\n\n"
-print "Your NMAP scan is complete and all files have been added to your github"
 
