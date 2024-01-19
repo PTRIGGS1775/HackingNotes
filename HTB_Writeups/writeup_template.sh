@@ -79,7 +79,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	printf "\n\n\n"
 	printf "============================================================================================================="
 	printf "\n\n"
-	printf "Your NMAP scan is complete and all files have been added to your github. Happy hunting."
+	printf "Your NMAP scan is complete and all files have been added to your github. Happy hunting.\n"
 
 else
 	git add . 
@@ -89,7 +89,7 @@ else
 	printf "\n\n\n"
 	printf "============================================================================================================="
 	printf "\n\n"
-	printf "Happy hunting on your own, all files have been added to your github"
+	printf "Happy hunting on your own, all files have been added to your github.\n"
 
 fi
 

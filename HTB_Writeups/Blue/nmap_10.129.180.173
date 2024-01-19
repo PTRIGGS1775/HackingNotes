@@ -1,6 +1,6 @@
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-19 16:43 EST
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-19 17:04 EST
 Nmap scan report for 10.129.180.173
-Host is up (0.084s latency).
+Host is up (0.097s latency).
 Not shown: 991 closed tcp ports (reset)
 PORT      STATE SERVICE      VERSION
 135/tcp   open  msrpc        Microsoft Windows RPC
@@ -15,25 +15,25 @@ PORT      STATE SERVICE      VERSION
 Service Info: Host: HARIS-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
-| smb2-time: 
-|   date: 2024-01-19T21:49:30
-|_  start_date: 2024-01-19T20:02:09
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-|_clock-skew: mean: 3s, deviation: 1s, median: 2s
-| smb2-security-mode: 
-|   2:1:0: 
-|_    Message signing enabled but not required
+|_clock-skew: mean: 4s, deviation: 2s, median: 2s
 | smb-os-discovery: 
 |   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
 |   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
 |   Computer name: haris-PC
 |   NetBIOS computer name: HARIS-PC\x00
 |   Workgroup: WORKGROUP\x00
-|_  System time: 2024-01-19T21:49:29+00:00
+|_  System time: 2024-01-19T22:06:14+00:00
+| smb2-time: 
+|   date: 2024-01-19T22:06:11
+|_  start_date: 2024-01-19T20:02:09
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2:1:0: 
+|_    Message signing enabled but not required
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 355.75 seconds
+Nmap done: 1 IP address (1 host up) scanned in 95.35 seconds
