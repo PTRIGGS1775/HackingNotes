@@ -50,9 +50,9 @@ echo "\`\`\`bash" >> $boxname/Readme.md
 echo "sudo nmap -sC -sV -oA -oA $boxname/nmap_$ip" >> $boxname/Readme.md
 echo "\`\`\`" >> $boxname/Readme.md
 
-env -i git add .
-env -i git commit -m "Created directory for HTB $boxname"
-env -i git push
+git add .
+git commit -m "Created directory for HTB $boxname"
+git push
 
 printf "[*] The script has completed. You know have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n"
 
