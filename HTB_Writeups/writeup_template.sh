@@ -54,7 +54,7 @@ git add .
 git commit -m "Created directory for HTB $boxname"
 git push
 
-printf "\n\n\n\n" + 20*("=") + "\n"
+printf "\n\n\n\n" + 20*"=" + "\n"
 printf "[*] The script has completed. You know have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n"
 read -p "Would you like to run your nmap script? (sudo nmap -sC -sV -oA -oA $boxname/nmap_$ip $ip)? " -n 1 -r
 echo ""
