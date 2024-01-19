@@ -58,7 +58,7 @@ echo "sudo nmap -sC -sV $ip > $boxname/nmap_$ip" >> $boxname/Readme.md
 echo "\`\`\`" >> $boxname/Readme.md
 
 printf "\n"
-printf "[*] The script has completed. You now have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n[*] Recommend taking a screenshot of the box image now to save a step with github.\n"
+printf "[*] The script has completed. You now have a $boxname directory with an images subdirectory.\n[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n[*] Recommend taking a screenshot of the box image now to save a step with github.\n"
 read -p "Would you like to run your nmap script [y/n]? (sudo nmap -sC -sV $ip > $boxname/nmap_$ip) " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
