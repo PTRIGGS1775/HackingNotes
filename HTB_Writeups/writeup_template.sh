@@ -2,16 +2,17 @@
 #
 #This script was written to save time when doing HTB writeups. 
 #Basically you're just copying the URL and the IP once you spawn your machine to get the initial portion of your work done for you.
+#Recommend you run the script as sudo to avoid needing to enter your password for NMAP later.
 
 boxurl="$1"
 ip="$2"
 
 #Check to see that the script was run with the appropriate arguments.
 if [ -z $boxurl ] | [ -z $ip ]; then
-	echo "[*] Correct Usage: $0 https://app.hackthebox.com/machines/{box name} IP.IP.IP.IP"
+	echo "[*] Correct Usage: sudo $0 https://app.hackthebox.com/machines/{box name} IP.IP.IP.IP"
 	exit 0
 elif ! [[ $boxurl =~ (https://app.hackthebox.com/machines/*) ]]; then
-       	echo "[*] Correct Usage: $0 https://app.hackthebox.com/machines/{box name} IP.IP.IP.IP"
+       	echo "[*] Correct Usage: sudo $0 https://app.hackthebox.com/machines/{box name} IP.IP.IP.IP"
 	echo "[*] If htb has changed their url for boxes you will need to re-write the script"	
 elif ! [[ $ip =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	echo "[*] That's not a valid IP address"
@@ -56,10 +57,8 @@ echo "\`\`\`bash" >> $boxname/Readme.md
 echo "sudo nmap -sC -sV $ip > $boxname/nmap_$ip" >> $boxname/Readme.md
 echo "\`\`\`" >> $boxname/Readme.md
 
-printf "\n\n\n"
-printf "============================================================================================================="
-printf "\n\n"
-printf "[*] The script has completed. You now have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n"
+printf "\n"
+printf "[*] The script has completed. You now have a $boxname directory with an images subdirectory.[*] You need to save your screenshot of the box as 'img.png' and the screenshot of your nmap scan as 'nmap.png' for all this hard work to be displayed.\n[*] Recommend taking a screenshot of the box image now to save a step with github.\n"
 read -p "Would you like to run your nmap script [y/n]? (sudo nmap -sC -sV $ip > $boxname/nmap_$ip) " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
