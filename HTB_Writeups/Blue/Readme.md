@@ -20,5 +20,5 @@ __Date__: 2024-01-19
 
 ![](images/nmap.png)
 ```bash
-sudo nmap -sC -sV -oA 10.129.180.173 > Blue/nmap_10.129.180.173
+sudo nmap -sC -sV 10.129.180.173 > Blue/nmap_10.129.180.173
 ```
