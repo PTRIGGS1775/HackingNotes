@@ -1,0 +1,74 @@
+=== === === === === === NMAP === === === === === ===
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-22 18:09 EST
+Nmap scan report for academy.htb (10.129.50.111)
+Host is up (0.10s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+| http-enum: 
+|   /admin.php: Possible admin folder
+|_  /login.php: Possible admin folder
+
+Nmap done: 1 IP address (1 host up) scanned in 17.65 seconds
+
+
+  === === === === === === NIKTO === === === === === ===
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          10.129.50.111
++ Target Hostname:    10.129.50.111
++ Target Port:        80
++ Start Time:         2024-01-22 18:10:10 (GMT-5)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.41 (Ubuntu)
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Root page / redirects to: http://academy.htb/
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Apache/2.4.41 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.
++ 8102 requests: 0 error(s) and 3 item(s) reported on remote host
++ End Time:           2024-01-22 18:24:47 (GMT-5) (877 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+=== === === === === === GOBUSTER === === === === === ===
+
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.129.50.111/
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              php,sh,txt,py
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+[2K/.hta                 (Status: 403) [Size: 278]
+[2K/.php                 (Status: 403) [Size: 278]
+[2K/.htaccess.php        (Status: 403) [Size: 278]
+[2K/.htaccess            (Status: 403) [Size: 278]
+[2K/.hta.py              (Status: 403) [Size: 278]
+[2K/.hta.php             (Status: 403) [Size: 278]
+[2K/.htpasswd            (Status: 403) [Size: 278]
+[2K/.htaccess.py         (Status: 403) [Size: 278]
+[2K/.htaccess.txt        (Status: 403) [Size: 278]
+[2K/.htaccess.sh         (Status: 403) [Size: 278]
+[2K/.htpasswd.php        (Status: 403) [Size: 278]
+[2K/.htpasswd.txt        (Status: 403) [Size: 278]
+[2K/.htpasswd.sh         (Status: 403) [Size: 278]
+[2K/.htpasswd.py         (Status: 403) [Size: 278]
+[2K/.hta.txt             (Status: 403) [Size: 278]
+[2K/.hta.sh              (Status: 403) [Size: 278]
+[2K/index.php            (Status: 302) [Size: 0] [--> http://academy.htb/]
+[2K/index.php            (Status: 302) [Size: 0] [--> http://academy.htb/]
+[2K/server-status        (Status: 403) [Size: 278]
+
+===============================================================
+Finished
+===============================================================
