@@ -34,20 +34,17 @@ Ping scan a range of IPs:\
 Recommend [hackTricks](https://book.hacktricks.xyz/welcome/getting-started-in-hacking) for any services not listed here.
 ## HTTP/S (80, 8080, 443)
 ### Method
-> First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):
-> - I set this as an alias so all I need to do is type `httpenum` into my CLI and it will run.
-> 
-> This script runs the NMAP scripting engine for HTTP, Nikto, and goBuster. You can do these things individually with:
-> - Nmap:
-> `sudo nmap -p 80 --script=http-enum.nse <IP>`
-> - goBuster (see below)
-> - Nikto:
-> `nikto -host <IP>`
->
-> Second thing is to review the webpage itself. Method:
-> 1. Review page and subdomains
-> 2. Review source code
-> 3. Use burpsuite to see what kind of responses you see.
+> 1. First things first need to run my [httpenum script](https://github.com/PTRIGGS1775/HackingNotes/blob/main/tools/httpenum.sh):
+>   * I set this as an alias so all I need to do is type `httpenum` into my CLI and it will run.
+>   * This script runs the NMAP scripting engine for HTTP, Nikto, and goBuster. You can do these things individually with:
+>       - Nmap:`sudo nmap -p 80 --script=http-enum.nse <IP>`
+>       - goBuster (see below)
+>       - Nikto:`nikto -host <IP>`
+> 2. Second thing is to review the webpage itself. Method:
+>   * Review page and subdomains
+>   * Review source code
+>   * Use burpsuite to see what kind of responses you see.
+>>  In burpsuite you should pay close attention to any php files you see especially if there is a login and register.
 
 ### goBuster Scans
 Also be aware that you can use different wordlists as well as look up different hosts with the VHOSTs option in gobuster, this allows you to find things suchs as secrets.htb.local from just having htb.local also known as subdomains.

@@ -7,7 +7,12 @@ Update kali linux
 When installing new tools recommend installing them into the opt directory  
 `cd /opt`  
 Find anything on your machine:
+
 `find / -name “what you want to find” 2>&1 | grep -v "Permission denied"`
+
+Find any tool or binary on a linux machine
+
+`locate {binary}` 
 Copy output to clipboard: 
 `{command} | xclip -selection -clipboard`
 
