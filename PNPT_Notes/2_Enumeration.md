@@ -55,6 +55,13 @@ Also be aware that you can use different wordlists as well as look up different 
 - Seclists\ 
 `sudo gobuster dir -u http://IP  -t 50 -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -s '200,204,301,302,307,403,500' -e`
 
+### ffuf
+ffuf will check a wordlist against directories. You can tab out the wordlist to change what youre using. You may need to change your port number if it's different.
+
+```bash
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://IP/FUZZ
+```
+
 ## SMB (139, 445)
 ### Method
 > TCM recommends searching metasploit to review smb scanning information
