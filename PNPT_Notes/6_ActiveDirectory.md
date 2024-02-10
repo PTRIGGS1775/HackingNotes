@@ -1,3 +1,6 @@
+import React from 'react';
+import rdmd from '@readme/markdown';
+
 # Active Directory
 ## LLMNR Poisoning
 - Link Local Multicast Name Resolution (LLMNR)
