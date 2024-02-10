@@ -6,10 +6,11 @@
 - Key flaw is that the services utilize a user's username and NTLMv2 hash when appropriately responded to.
 - With a MitM, you can observe the broadcast for people looking to connect to a share and crack the hash offline.
 
-> # Note
+> ### Note
 > You must be on the same network to capture this traffic.
 
 To run the process:
 ````bash
 sudo responder -I {interface} -dwP
 ````
+![] (/images/responder.png)
