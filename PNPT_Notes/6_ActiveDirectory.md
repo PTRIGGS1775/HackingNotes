@@ -13,4 +13,4 @@ To run the process:
 ````bash
 sudo responder -I {interface} -dwP
 ````
-![] (/images/responder.png)
+![] (images/responder.png)
