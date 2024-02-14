@@ -1,5 +1,15 @@
 # Active Directory
-## LLMNR Poisoning
+
+## Active Directory: Initial Attack
+
+**Process**
+1. Start by running responder or mitm6.
+2. Run scans to generate traffic.
+3. If scans are taking too long, look for websites in scope (http_verison).
+4. Look for default credentials on web logins or vulnerabilities.
+5. Try harder.
+
+### LLMNR Poisoning
 - Link Local Multicast Name Resolution (LLMNR)
 - Used to identify hosts when DNS fails to do so.
 - Previously NBT-NS.
@@ -28,7 +38,7 @@ sudo responder -I {interface} -dwP
 > To find what code to use grep the code, for example
 > `hashcat --help | grep NTLM`
 
-## SMB Relay
+### SMB Relay
 - Instead of cracking hashes we can relay those hashes to specific machines and potentially gain access.
 - SMB signing must be disabled or not enforced.
     - You'll see this as an option with your NMAP script.
@@ -55,7 +65,7 @@ impacket-ntlmrelayx -tf targets.txt -smb2support -i
 
 ![](images/smb_relay.png)
 
-## IPv6 Attack
+### IPv6 Attack
 - This works off most computers using IPv4, but having IPv6 turned on. With no legitamate server for DNS on IPv6 we spoof that DNS to steal NTLM hashes then pass that to the DC.
 - Only run this in small sprints, it can disable a network.
 
@@ -86,13 +96,28 @@ sudo mitm6 -i eth0 -d {domain.local}
 
 ![](images/lootme.png)
 
-## Impacket
+### Passback Attack
+![A Pen Tester’s Guide to Printer Hacking](https://www.mindpointgroup.com/blog/how-to-hack-through-a-pass-back-attack/)
+
+### Impacket
 ![Impacket is a collection of Python scripts that can be used by an attacker to target Windows network protocols. This tool can be used to enumerate users, capture hashes, move laterally and escalate privileges.](https://neil-fox.github.io/Impacket-usage-&-detection/)
 - Impacket is a suite of tools that can help you get hashes and pass hashes. Read the full manual for more information
 - With the new update, commands start with `impacket-{command}`. To see a full list type `impacket-[TAB][TAB]`
 
-### Get hashes if you have one password
+#### Get hashes if you have one password
 - If you have one password you can use impacket to get hashes for the other accounts and then use those hashes to pass the hash, IE for the administrator. `impacket-secretsdump {domain}.local/{username}:'{Password}'@{IP}`
 
-### Pass the Hash
+#### Secretsdump
+- Used to get hashes if you have a regular user password.
+````bash
+impacket-secretsdump {domain}.local/{username}:{Password}@{IP of user machine}
+````
+
+#### Pass the Hash
 - Pash the hash with `impacket-psexec [username]@[ip] -hashes [hash]`
+
+## Active Directory: Post-Compromise Enumeration
+- This stage starts after you have an account particular those that are only regular users.
+
+**Process**
+1. Review your lootme file or manually run the command `sudo ldapdomaindump ldaps://{IP} -u '{domain}\{user} -p {password}` to get that same information.
