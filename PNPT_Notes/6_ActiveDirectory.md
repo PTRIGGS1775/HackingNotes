@@ -65,10 +65,13 @@ impacket-ntlmrelayx -6 -t ldaps://{ip of DC} -wh fakewpad.{domain.local} -l {loo
 ````
 > **Note**
 > ***
-> -6 is for ipv6
-> -t is for target
-> -wh Enable serving a WPAD file for Proxy Authentication attack, setting the proxy host to the one supplied. The Web Proxy Auto-Discovery (WPAD) Protocol is a method used by clients to locate the URL of a configuration file using DHCP and/or DNS discovery methods. Once detection and download of the configuration file is complete, it can be executed to determine the proxy for a specified URL.
+> -6 is for ipv6\
+> -t is for target\
+> -wh Enable serving a WPAD file for Proxy Authentication attack, setting the proxy host to the one supplied. The Web Proxy Auto-Discovery (WPAD) Protocol is a method used by clients to locate the URL of a configuration file using DHCP and/or DNS discovery methods. Once detection and download of the configuration file is complete, it can be executed to determine the proxy for a specified URL.\
 > -l Loot directory in which gathered loot such as SAM dumps will be stored. This is the fake name you want to create to find later
+
+> **Warning**
+> If you have issues, try reinstalling impacket using pimpmykali
 
 2. Run mitm6 (this needs to be installed first)
 ````bash
@@ -78,6 +81,10 @@ sudo mitm6 -i eth0 -d {domain.local}
 > **Note**
 > ***
 > By default mitm6 used my production interface so make sure you change the interface to the one that the DC is on.
+
+3. Review your lootme file in the directory you ran the attack
+
+![](images/lootme.png)
 
 ## Impacket
 ![Impacket is a collection of Python scripts that can be used by an attacker to target Windows network protocols. This tool can be used to enumerate users, capture hashes, move laterally and escalate privileges.](https://neil-fox.github.io/Impacket-usage-&-detection/)
