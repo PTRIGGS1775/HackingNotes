@@ -108,7 +108,7 @@ sudo mitm6 -i eth0 -d {domain.local}
 #### Pass the Hash
 - Pash the hash with `impacket-psexec [username]@[ip] -hashes [hash]`
 
-## Active Directory: Post-Compromise
+## Active Directory: Post-Host Compromise
 - This stage starts after you have an account particular those that are only regular users.
 
 **Process**
@@ -125,8 +125,6 @@ sudo mitm6 -i eth0 -d {domain.local}
 - JK I did everything I could, and I couldn't get bloodhound or neo4j.
 - JK JK, followed the instructions to ![uninstall and reinstall](https://github.com/BloodHoundAD/BloodHound/issues/540)
 - JK JK JK, looks like I still can't follow along with the course because the build of bloodhound appears depreciated and the command to pull the data doesn't work.
-
-3. Attack!
 
 ### Pass the Password/Hash
 - The strategy for this attack is to get access to one account and pass it around the domain.
@@ -155,7 +153,9 @@ impacket-secretsdump {domain}.local/{username}:{Password}@{IP of user machine}
 - Once you get hashes, use this against all computers in the domain. Re-spray the network until you find vertical access.
 - Then crack the hashes with hashcat (Process listed above).
 
-### Kerneroasting
+## Active Directory: DC Attack
+
+### Kerberoasting
 - Goal of Kerberoasting: Get Ticket Granting Service (TGS) and decrypt server's account hash.
 - We can use a compromised account to request the TGS to roast the DC.
 
@@ -172,3 +172,5 @@ hashcat -m 13100 kerb.txt /usr/share/wordlists/rockyou.txt
 
 ![](images/Kerberoasting_Overview.png)
 Credit: TCMAcademy
+
+### Token Impersonation
