@@ -19,3 +19,7 @@ Markdown:
 - https://www.markdownguide.org/cheat-sheet/  
 -  https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet
 
+Methodology:
+The Bug Hunter's Methodology - https://www.youtube.com/watch?v=uKWu6yhnhbQ
+
+Nahamsec Recon Playlist - https://www.youtube.com/watch?v=MIujSpuDtFY&list=PLKAaMVNxvLmAkqBkzFaOxqs3L66z2n8LA
