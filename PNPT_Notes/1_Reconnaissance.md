@@ -2,6 +2,9 @@
 - Gather information to help inform password attcks and login information 
 - Passive information gathering activities should be focused on identifying IP addresses, (sub)domains, finding external partners and services, the types of technologies used and any other useful information (including the names of employees working at the company, e-mail addresses, websites, customers, naming conventions, E-mail & VPN systems and sometimes even passwords). 
 
+# SEMI-PASSIVE 
+- Access the site like a regular user to determine what technology is used. 
+
 ## Finding Email accounts
 1. [hunter.io](https://hunter.io)
 2. [phonebook.cz](https://phonebook.cz) Prints out usernames in URL that you can Curl and pull info.
@@ -32,7 +35,7 @@ Separate from enumerating with something like gobuster there are sites and tools
 4. [HTTPSec](https://securityheaders.com) | Analyze HTTP response headers and provide basic analysis of security posture.
 
 ## Google Hacking
-
+- For more help visit the [GoogleDorking-Database](https://www.exploit-db.com/google-hacking-database)
 1. site:  #Used to narrow the site and find subdomains
 2. filetype:  #used to specify any file. 
 3. -filetype: #used to negate filetypes 
