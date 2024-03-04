@@ -43,6 +43,7 @@ Recommend [hackTricks](https://book.hacktricks.xyz/welcome/getting-started-in-ha
 > 2. Second thing is to review the webpage itself. Method:
 >   * Review page and subdomains
 >   * Review source code
+>   * Review response headers with FireFox network tool IOT discover server version info.
 >   * Use burpsuite to see what kind of responses you see.
 >>  In burpsuite you should pay close attention to any php files you see especially if there is a login and register.
 
