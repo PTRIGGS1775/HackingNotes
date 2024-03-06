@@ -130,3 +130,8 @@ ssh -p {different port if needed} {username}@{ip} -L {target port}:127.0.0.1:{ta
 > - You can use the '-P' switch to specify which ssh port you're using.
 > - This is useful if you've setup a tunnel or changed the SSH port.
 > - Ex: `scp -P 1111 secretstuff.txt target@localhost:/home/target` 
+
+## Password Attacks
+- This section will expand beyond just using hashcat for cracking passwords, but methods for attacking passwords.
+
+- Talk about wordlists, and creating wordlists from websites.
