@@ -20,6 +20,7 @@ The following options below are just options, you should be thinking about the m
 1. [MaverickAdams Github](https://github.com/hmaverickadams) Download his tool called breach-parse.
 2. [Dehashed](https://dehashed.com/login) Let's you search on various fields to see where else that information is used.
 3. [GitLeaks](https://github.com/zricethezav/gitleaks) | Find leaks in github, you can also do a filename:users search on the github page.
+4. [Sripted breach scraper website](scylla.sh) | Use this after looking at breached credentials.
 
 ## Finding subdomains passively
 Separate from enumerating with something like gobuster there are sites and tools that you can find subdomains with minimal lag time. Note these tools are probably not as effective for HackTheBox or ProvingGrounds. However, these are likely good for bug bounties.
@@ -36,10 +37,14 @@ Separate from enumerating with something like gobuster there are sites and tools
 
 ## Google Hacking
 - For more help visit the [GoogleDorking-Database](https://www.exploit-db.com/google-hacking-database)
-1. site:  #Used to narrow the site and find subdomains
+- Leverage standard boolean logic to narrow results. Use wildcards *.
+1. site:  #Used to narrow the site and find subdomains by stripping wwww
 2. filetype:  #used to specify any file. 
 3. -filetype: #used to negate filetypes 
 4. intitle:“index of” “parent directory”   #Used to find incorrectly configured pages 
+5. intext: #Used to find information in the page like "password"
+6. inurl: #Helps narrow down the list.
+7. Don't forget to use 'Advanced Search'
 
 ## Social Media
 1. [citizenevidence](https://citizenevidence.amnestyuse.org) | Provides metadata of videos 
@@ -48,3 +53,17 @@ Separate from enumerating with something like gobuster there are sites and tools
 4. [followerwonk](https://followerwonk.com) | More social media searches
 5. [shodan](https://www.shodan.io/) | Crawls devices connected to the internet like websites, servers, and IoT. 
 6. **sherlock** |  Python3 tool for searching peoples social media presence. 
+7. [namecheck](https://www.namechk.com) | Helps you find taken usernames.
+
+## Image OSINT
+- Reverse Image Search
+    - images.google.com to upload the image and find source.
+    - tineye.com is a different tool, but same function.
+
+- Viewing EXIF Data
+    - jimpl.com. Drag and drop image.
+
+## Physical Location OSINT
+- Google satellite view to identify information about your location.
+- If you need to figure something like this out: https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/
+
