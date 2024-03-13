@@ -54,6 +54,24 @@ Separate from enumerating with something like gobuster there are sites and tools
 5. [shodan](https://www.shodan.io/) | Crawls devices connected to the internet like websites, servers, and IoT. 
 6. **sherlock** |  Python3 tool for searching peoples social media presence. 
 7. [namecheck](https://www.namechk.com) | Helps you find taken usernames.
+8. Platform Specific:
+    - Twitter:
+        - Use 'from:' in the search bar to see all posts/responses
+        - Use 'to:' to find people talking to the individual
+        - 'since:' and 'until:' to filer timeline
+        - 'geocode:{code},{distance in km} 'with copied geocodes from google
+        - https://github.com/rmdir-rp/OSINT-twitter-tools
+    - Facebook:
+        - Videos only demonstrated basic search feature of facbook.
+        - Tool: https://sowsearch.info
+        - Tool: https://intelx.io/tools?tab=facebook
+        - `ctrl + u` on a user page then find 'user id:'
+    - Instagram:
+        - Search for the person and resort to image OSINT
+        - Tool: https://imginn.com/
+        - For the profile ID, right click and click "View page source". Then search for "profilePage_"
+
+
 
 ## Image OSINT
 - Reverse Image Search
@@ -62,6 +80,12 @@ Separate from enumerating with something like gobuster there are sites and tools
 
 - Viewing EXIF Data
     - jimpl.com. Drag and drop image.
+
+## People OSINT (Hate this section title)
+- For other countries try seeing if the websites have different TLDs.
+- Find people with whitepages.com or truepeoplesearch.com, also look at voter records.
+- IP Addresses: thatsthem.com
+- Phone numbers: truecaller.com or calleridtest.com or infobel.com (international) | use google and try variations of the phone number or with emojis.
 
 ## Physical Location OSINT
 - Google satellite view to identify information about your location.
