@@ -4,6 +4,7 @@
 
 # SEMI-PASSIVE 
 - Access the site like a regular user to determine what technology is used. 
+- Go to the top left of kali and select frameworks to choose from OSINT frameworks you can use.
 
 ## Finding Email accounts
 1. [hunter.io](https://hunter.io)
@@ -52,9 +53,9 @@ Separate from enumerating with something like gobuster there are sites and tools
 3. [peakyou](https://peakyou.com) | searches information about specific people 
 4. [followerwonk](https://followerwonk.com) | More social media searches
 5. [shodan](https://www.shodan.io/) | Crawls devices connected to the internet like websites, servers, and IoT. 
-6. **sherlock** |  Python3 tool for searching peoples social media presence. 
+6. **sherlock** |  Python3 tool for searching peoples social media presence. `sherlock username`
 7. [namecheck](https://www.namechk.com) | Helps you find taken usernames.
-8. Platform Specific:
+8. Platform Specific (in general most SM platforms have locked down so OSINT is limited):
     - Twitter:
         - Use 'from:' in the search bar to see all posts/responses
         - Use 'to:' to find people talking to the individual
@@ -70,16 +71,22 @@ Separate from enumerating with something like gobuster there are sites and tools
         - Search for the person and resort to image OSINT
         - Tool: https://imginn.com/
         - For the profile ID, right click and click "View page source". Then search for "profilePage_"
-
-
+    - Snapchat:
+        - map.snapchat.com
+    - Reddit:
+        - More google fu. Don't forget to check a user's post and comment history.
+    - Linkedin:
+        - Just review their pages.
 
 ## Image OSINT
 - Reverse Image Search
     - images.google.com to upload the image and find source.
     - tineye.com is a different tool, but same function.
-
 - Viewing EXIF Data
     - jimpl.com. Drag and drop image.
+- Command line
+    - Basic usage: `exiftool <img>`
+    - To save to a file: `exiftool <img> > file.txt`
 
 ## People OSINT (Hate this section title)
 - For other countries try seeing if the websites have different TLDs.
@@ -90,4 +97,12 @@ Separate from enumerating with something like gobuster there are sites and tools
 ## Physical Location OSINT
 - Google satellite view to identify information about your location.
 - If you need to figure something like this out: https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/
+- [wiglenet](https://wigle.net) used to find wifi information around a map.
+
+## Website OSINT
+- [builtwith](https://builtwith.com) to find out information about what the website is running.
+- [centralops](https://centralops.net) to find out information about who bought the website
+- [urlscan](https://urlscan.io) to view the behavior and content of a website without viewing it directly.
+- [crt.sh](https://crt.sh) to find other websites and subdomains a website might have.
+- [hunchly](https://hunch.ly) A google chrome extension that really just lets you organized captured PAI.
 
