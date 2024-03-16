@@ -2,11 +2,12 @@
 Hacking notes is a page that I've built to start my convergence of learning with Vim, GitHub, and several certifications (PNPT & OSCP).
 
 ## To-do list
-* Learn Vim  
-* Learn Git (Beyond the basics, maybe not much more)  
-* Complete PNPT
-* Complete Hacking book and learn how to build exploits.
-* Learn Docker
+- [x] Learn Vim  
+- [x] Learn Git (Beyond the basics, maybe not much more)  
+- [ ] Complete PNPT
+- [ ] Complete Hacking book and learn how to build exploits.
+- [ ] Pass GREM exam
+- [ ] Learn Docker
 * Complete OSCP
 
 ## Useful Links
