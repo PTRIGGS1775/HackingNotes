@@ -1,5 +1,7 @@
 # Active Recon
 
+## Vulnerability Scans
+
 ## NMAP Scans 
 **Host Discovery**\
 `nmap -sn 10.10.10.0/24`\
