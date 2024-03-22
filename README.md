@@ -28,3 +28,5 @@ Methodology:
 ![](PNPT_Notes/images/checklists.png)
 
 Always verify scope with a [tool](https://bgp.he.net)
+
+Report Writing: https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report
