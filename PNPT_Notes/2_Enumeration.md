@@ -4,11 +4,16 @@
 
 ## NMAP Scans 
 **Host Discovery**\
-`nmap -sn 10.10.10.0/24`\
-`sudo arp-scan -l`
+````bash
+nmap -sn 10.10.10.0/24
+
+sudo arp-scan -l
+````
 
 **Initial Scans**\
-`sudo nmap -sC -sV -oA {directory}/{directory}  10.10.10.242`
+````bash
+sudo nmap -sC -sV -oN name  10.10.10.242
+````
 
 **Fast Scans**\
 ```bash
