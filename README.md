@@ -16,6 +16,7 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] Complete Hacking book and learn how to build exploits.
 - [ ] Learn JavaScript/Obfuscation
     - [ ] Just the Basics of JavaScript
+- [ ] Learn PowerShell Commands for Malware
 - [ ] Malware Analysis Courses
     - [ ] GREM Course
     - [ ] GREM Certification
