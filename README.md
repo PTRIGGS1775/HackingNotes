@@ -17,7 +17,10 @@ Hacking notes is a page that I've built to start my convergence of learning with
 - [ ] Learn JavaScript/Obfuscation
     - [ ] Just the Basics of JavaScript
 - [ ] Learn PowerShell Commands for Malware
+- [ ] Learn CPU/Windows Internals
 - [ ] Malware Analysis Courses
+    - [ ] Update VMs with useful upgrades.
+        - [ ] Modify dieder programs with configuration settings.
     - [ ] GREM Course
     - [ ] GREM Certification
         - [ ] Build Index
@@ -30,12 +33,16 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] TCM PMAT Certification
     - [ ] Reversing Book (The one from amazon instructor showed.)
     - [ ] [Practice](Malware_Analysis/FOR610_Notes.md#practice-sources-for-more-malware-samples)
-
+    - [ ] https://maldevacademy.com/: Amazing site for learning what to look for in malware analysis.
 - [ ] Complete PNPT
-
-- [ ] Pass GREM exam
-- [ ] Learn Docker
 - [ ] Pass OSCP Exam
+- [ ] Learn Docker
+
+
+##
+- Become visible: blogs, videos. Maybe review someone elses work to see what they missed.
+- Keep practicing
+- Entry jobs likely to be as consulting or incident response teams or forensics.
 
 ## Useful Links
 Here's what I'm using to learn.
@@ -58,3 +65,5 @@ Methodology:
 Always verify scope with a [tool](https://bgp.he.net)
 
 Report Writing: https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report
+
+
