@@ -18,9 +18,10 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] Just the Basics of JavaScript
 - [ ] Learn PowerShell Commands for Malware
 - [ ] Learn CPU/Windows Internals
-- [ ] Malware Analysis Courses
+- [ ] Malware Analysis
     - [ ] Update VMs with useful upgrades.
         - [ ] Modify dieder programs with configuration settings.
+    - [ ] Build AWS Server to spin up to access and defang malware./Build a safe network setup.
     - [ ] GREM Course
     - [ ] GREM Certification
         - [ ] Build Index
@@ -28,7 +29,7 @@ Hacking notes is a page that I've built to start my convergence of learning with
         - [ ] Take Practice tests and iterate above.
         - [ ] Learn how to recognize encoding based on look.
         - [ ] Schedule Exam
-    - [ ] PMAB Book
+    - [ ] PMA Book
     - [ ] TCM PMAT Course
     - [ ] TCM PMAT Certification
     - [ ] Reversing Book (The one from amazon instructor showed.)
@@ -39,7 +40,7 @@ Hacking notes is a page that I've built to start my convergence of learning with
 - [ ] Learn Docker
 
 
-##
+## Career Advice
 - Become visible: blogs, videos. Maybe review someone elses work to see what they missed.
 - Keep practicing
 - Entry jobs likely to be as consulting or incident response teams or forensics.
