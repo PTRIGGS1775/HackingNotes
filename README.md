@@ -1,6 +1,6 @@
 # HackingNotes
 Hacking notes is a page that I've built to start my convergence of learning with Vim, GitHub, and several certifications (PNPT & OSCP).
-Minor test for github
+Minor test for github 
 ## To-do list
 - [x] Learn Vim  
 - [x] Learn Git (Beyond the basics, maybe not much more)  
