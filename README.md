@@ -14,6 +14,7 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] Grab a copy of [C programming: A Modern Approach](http://knking.com/books/c2/index.html) use as main course on C.
     - [ ] Follow this [Tutorial On Pointers And Arrays In C](https://github.com/jflaherty/ptrtut13)
     - [ ] Complete Hacking book and learn how to build exploits.
+- [ ] Learn Assembly: Insert Book/Course Link Here
 - [ ] Learn JavaScript/Obfuscation
     - [ ] Just the Basics of JavaScript
 - [ ] Learn PowerShell Commands for Malware
@@ -22,13 +23,13 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] Update VMs with useful upgrades.
         - [ ] Modify dieder programs with configuration settings.
     - [ ] Build AWS Server to spin up to access and defang malware./Build a safe network setup.
-    - [ ] GREM Course
+    - [x] GREM Course
     - [ ] GREM Certification
-        - [ ] Build Index
-        - [ ] Re-do labs at least once
+        - [x] Build Index
+        - [x] Re-do labs at least once
         - [ ] Take Practice tests and iterate above.
         - [ ] Learn how to recognize encoding based on look.
-        - [ ] Schedule Exam
+        - [x] Schedule Exam
     - [ ] PMA Book
     - [ ] TCM PMAT Course
     - [ ] TCM PMAT Certification
@@ -36,6 +37,7 @@ Hacking notes is a page that I've built to start my convergence of learning with
     - [ ] [Practice](Malware_Analysis/FOR610_Notes.md#practice-sources-for-more-malware-samples)
     - [ ] https://maldevacademy.com/: Amazing site for learning what to look for in malware analysis.
 - [ ] Complete PNPT
+- [ ] Take GCED
 - [ ] Pass OSCP Exam
 - [ ] Learn Docker
 
